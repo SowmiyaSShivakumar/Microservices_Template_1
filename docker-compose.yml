@@ -1,0 +1,16 @@
+version: '3'
+services:
+  api_gateway:
+    build: ./api_gateway
+    ports:
+      - "80:80"
+  service_registry:
+    build: ./service_registry
+  microservice_a:
+    build: ./microservice_a
+  microservice_b:
+    build: ./microservice_b
+  front_end:
+    build: ./front_end
+    ports:
+      - "3000:3000"
