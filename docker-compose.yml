@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "80:80"
+
+  service-registry:
+    build: ./service-registry
+
+  config-server:
+    build: ./config-server
+
+  auth-service:
+    build: ./auth-service
+    environment:
+      - OAUTH2_SECRET=your_secret
+
+  user-service:
+    build: ./user-service
+
+  product-service:
+    build: ./product-service
+
+  message-queue:
+    build: ./message-queue
+
+  caching:
+    build: ./caching
